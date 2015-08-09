@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Developer Override Email Address</title>
+
+<style type="text/css">
+<!--
+a, a:active, a:visited { color: #006666; text-decoration: none; }
+a:hover { color:#00CC99; text-decoration: underline; }
+body, p, h1, h2, h3, h4, h5, h6, li, td, dd, dt { font-family: Verdana, AvantGarde, Tahoma, Arial, sans-serif; font-size: 10pt; color: black; padding: 0px; margin: 20px; }
+pre { margin: 20px; }
+H1, H2, H3, H4 { font-weight: bold }
+h1 { font-size: 20px; }
+h2 { font-size: 16px; }
+ol li, ul li { margin: 5px 0; }
+.corefile, .impt { color: red; }
+.impt { font-size: larger; font-weight: bold; font-style: italic; }
+img { margin-left: 20px; max-width: 95%; }
+.smaller { font-size: smaller; }
+-->
+</style>
+</head>
+
+<body>
+<a name="top" id="top"></a>
+<h1>Developer Override Email Address <span class="smaller">(for Zen Cart v1.5.0 through v1.5.4)</span></h1>
+<h3>Version 1.0.0</h3>
+<p>Current Support Thread at Zen Cart Forums: <a href="http://www.zen-cart.com/showthread.php?213695-myDEBUG-Backtrace-Support-Thread" target="_blank">http://www.zen-cart.com/showthread.php?213695-myDEBUG-Backtrace-Support-Thread</a></p>
+
+<h2>What it does</h2>
+<p>This plugin makes use of the built-in Zen Cart constant: <code>DEVELOPER_OVERRIDE_EMAIL_ADDRESS</code>.  When that constant is set to a non-blank value, the <em>zen_mail</em> function sends <span class="impt">all</span> emails to the address (or addresses) specified by that constant.  That allows you, as a Zen Cart developer, to use "live" data during your testing without sending unwanted emails to real customers!</p>
+<p>The plugin should <span class="impt">never, ever</span> be used on a live site; its utility is on test-site clones of your live site.</p>
+
+<h2>Installation</h2>
+<p>There are no core-file overwrites or database changes associated with this module.  Installation is simple:</p>
+<ol>
+  <li>Unzip the plugin's package file, rename the YOUR_ADMIN folder to match your custom admin folder's name.</li>
+  <li>Edit (using a text-editor like <code>Notepad++</code>) the file /includes/extra_configures/developer_override_email_address.php, setting the email address(es) to which all test-store emails will be sent.  If multiple addresses are required, separate the addresses using a comma (,).</li>
+  <li>Copy the plugin's files to your store's file-system:<ol>
+    <li>/includes/extra_configures/developer_override_email_address.php</li>
+    <li>/YOUR_ADMIN/includes/auto_loaders/config.developer_override_email_address.php</li>
+    <li>/YOUR_ADMIN/includes/extra_configures/developer_override_email_address_admin.php</li>
+    <li>/YOUR_ADMIN/includes/init_includes/init_developer_override_email_address.php</li>
+    <li>/YOUR_ADMIN/includes/languages/english/extra_definitions/developer_override_email_address_message.php</li>
+  </ol></li>
+</ol>
+
+<h2>Uninstall</h2>
+<p>Delete the plugin's files from your store's file-system.</p>
+
+<h2>Version History:</h2>
+<ul>
+  <li>v1.0.0, 2015-08-09, Initial release.</li>
+</ul>
+
+</body>
+</html>
